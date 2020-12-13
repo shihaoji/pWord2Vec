@@ -30,7 +30,7 @@ sudo apt-get install numactl (on Ubuntu)
 ```
 
 ## Quick Start
-1. Download the code: ```git clone https://github.com/IntelLabs/pWord2Vec```
+1. Download the code: ```git clone https://github.com/shihaoji/pWord2Vec```
 2. Run .\install.sh to build the package (e.g., it downloads hyperwords and compiles the source code.)  
 Note that this installation will try to produce two binaries: pWord2Vec and pWord2Vec_mpi. If you are only interested in the non-mpi version of w2v, you don't need to set up mpi and the compilation will fail on building pWord2Vec_mpi of course. But you can still use the non-mpi binary for the rest of single machine demos.
 3. Download the data: ```cd data; .\getText8.sh or .\getBillion.sh```
@@ -38,10 +38,15 @@ Note that this installation will try to produce two binaries: pWord2Vec and pWor
 5. Run the code on the 1-billion-word-benchmark: ```cd billion; ./run_single.sh (for single machine w2v) or ./run_mpi.sh (for distributed w2v) (please set ncores=number of logical cores of your machine)```
 6. Evaluate the models: ```cd sandbox; ./eval.sh or cd billion; ./eval.sh```
 
-## Reference
+## Citation
 
-[Parallelizing Word2Vec in Shared and Distributed Memory](https://ieeexplore.ieee.org/document/8663393), IEEE Transactions on Parallel and Distributed Systems (IEEE TPDS), Volume 30, Issue 9, Pages 2090-2100, Sept. 1 2019. 
+If you found this code useful, please cite our paper.
 
-[Parallelizing Word2Vec in Multi-Core and Many-Core Architectures](https://arxiv.org/abs/1611.06172), NIPS workshop on Efficient Methods for Deep Neural Networks, Dec. 2016.
-
-For questions and bug reports, you can reach me at https://grid.cs.gsu.edu/~sji/
+```latex
+@inproceedings{pword2vec16,
+  title     = {Parallelizing Word2Vec in Multi-Core and Many-Core Architectures},
+  author    = {Shihao Ji and Nadathur Satish and Sheng Li and Pradeep Dubey},
+  booktitle = {NIPS workshop on Efficient Methods for Deep Neural Networks},
+  year      = {2016}
+}
+```
